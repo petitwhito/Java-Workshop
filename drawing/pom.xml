@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.epita.assistants</groupId>
+    <artifactId>drawing</artifactId>
+    <version>1.0</version>
+
+
+    <properties>
+        <versions.java>17</versions.java>
+
+        <versions.junit>5.9.1</versions.junit>
+
+        <versions.maven-compiler-plugin>3.8.1</versions.maven-compiler-plugin>
+        <versions.maven-surefire-plugin>2.22.2</versions.maven-surefire-plugin>
+        <versions.maven-jar-plugin>3.1.1</versions.maven-jar-plugin>
+        <versions.maven-install-plugin>3.1.0</versions.maven-install-plugin>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <surefire.reportsDirectory>${project.build.directory}/surefire-reports</surefire.reportsDirectory>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${versions.junit}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit-platform</artifactId>
+            <version>${versions.maven-surefire-plugin}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-compat</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-monitor</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-filtering</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-interpolation</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-profile</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-artifact-manager</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-registry</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-repository-metadata</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${versions.maven-compiler-plugin}</version>
+                <configuration>
+                    <source>${versions.java}</source>
+                    <target>${versions.java}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${versions.maven-install-plugin}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${versions.maven-surefire-plugin}</version>
+                <configuration>
+                    <reportsDirectory>${surefire.reportsDirectory}</reportsDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
